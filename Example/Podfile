@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'KYVideoTrim_Example' do
+  pod 'KYVideoTrim', :path => '../'
+
+  target 'KYVideoTrim_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
