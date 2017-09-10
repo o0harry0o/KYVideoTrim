@@ -92,6 +92,7 @@ extension ViewController : KYVideoRangeSliderDelegate{
     func videoRangeSlider(_ slider: KYVideoRangeSlider, lowerValue: Double, upperValue: Double) {
 
         self.videoPlayerVC.seek(to:slider.mapperToCMTime(lowerValue))
+        self.videoPlayerVC.playEndTime = upperValue
         let lowString = String(format: "%.1f", slider.lowerValue)
         let upperString = String(format: "%.1f", slider.upperValue)
         let lengthString = String(format: "%.1f", slider.trackedDuration)

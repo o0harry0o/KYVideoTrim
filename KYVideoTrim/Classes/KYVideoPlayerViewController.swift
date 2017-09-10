@@ -12,8 +12,6 @@ import AVFoundation
 
 let KYVideoTrimPlayerInterfaceAnimationDuration = 0.15
 
-/// videoStatus
-///
 public enum KYVideoTrimPlayerPlaybackState : Int {
     case unknown
     case prepared
@@ -46,36 +44,20 @@ public typealias KYVideoTrimPlayerProgressHandler = (CMTime) -> Void
 public typealias KYVideoTrimPlayerPlaybackStateChangedHandler = (KYVideoTrimPlayerPlaybackState) -> Void
 
 open class KYVideoPlayerViewController: UIViewController {
+
     //MARK: - Public Properties
     public var asset: AVAsset?{
         didSet{
             self.videoView.player = self.player
+            self.timeUnObserver()
+            self.configTimeObserver()
+            NotificationCenter.default.removeObserver(self)
+            self.configNotifications()
         }
     }
     public var progressHandler: KYVideoTrimPlayerProgressHandler?
     public var playbackStateChangedHandler: KYVideoTrimPlayerPlaybackStateChangedHandler?
-
-    //MARK: - Private Properties
-    private lazy var videoView: KYVideoPlayerView = {
-        let videoView = KYVideoPlayerView(frame: CGRect.zero)
-        videoView.videoFillMode = .resizeAspect
-        return videoView
-    }()
-
-    private lazy var player: AVPlayer = {
-        return AVPlayer(playerItem: self.playerItem)
-    }()
-
-    private lazy var playerItem: AVPlayerItem? = {
-        if let asset = self.asset {
-            return AVPlayerItem(asset: asset)
-        }
-        return nil
-    }()
-
-    private let playButton = UIButton(frame: .zero)
-    private var playButtonWidthConstraint : NSLayoutConstraint!
-    private var playButtonHeightConstraint : NSLayoutConstraint!
+    public var playEndTime : Double?
 
     public var playButtonWidth : CGFloat = 40 {
         didSet{
@@ -99,6 +81,30 @@ open class KYVideoPlayerViewController: UIViewController {
             self.playButton.setBackgroundImage(self.playButtonBackgroundImage, for: .normal)
         }
     }
+
+
+    //MARK: - Private Properties
+    private lazy var videoView: KYVideoPlayerView = {
+        let videoView = KYVideoPlayerView(frame: CGRect.zero)
+        videoView.videoFillMode = .resizeAspect
+        return videoView
+    }()
+
+    private lazy var player: AVPlayer = {
+        return AVPlayer(playerItem: self.playerItem)
+    }()
+
+    private lazy var playerItem: AVPlayerItem? = {
+        if let asset = self.asset {
+            return AVPlayerItem(asset: asset)
+        }
+        return nil
+    }()
+
+    private let playButton = UIButton(frame: .zero)
+    private var playButtonWidthConstraint : NSLayoutConstraint!
+    private var playButtonHeightConstraint : NSLayoutConstraint!
+
 
     /// playback progress observer
     private var timeObserver: Any?
@@ -132,10 +138,7 @@ open class KYVideoPlayerViewController: UIViewController {
     //MARK: - Life Cycle
     deinit {
         // Remove Observers
-        if let _timeObserver = self.timeObserver {
-            self.player.removeTimeObserver(_timeObserver)
-        }
-
+        self.timeUnObserver()
         NotificationCenter.default.removeObserver(self)
     }
 
@@ -164,9 +167,6 @@ open class KYVideoPlayerViewController: UIViewController {
     override open func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-        configTimeObserver()
-        configNotifications()
     }
 
     open override func viewDidAppear(_ animated: Bool) {
@@ -227,10 +227,25 @@ open class KYVideoPlayerViewController: UIViewController {
 
     /// observe playback progress
     private func configTimeObserver() {
-        if let progressHandler = progressHandler {
-            self.timeObserver = self.player.addPeriodicTimeObserver(forInterval: CMTimeMake(1, self.timeScale),
-                                                            queue: DispatchQueue.main,
-                                                            using: progressHandler)
+        self.timeObserver = self.player.addPeriodicTimeObserver(forInterval: CMTimeMake(1, self.timeScale), queue: DispatchQueue.main, using: {  [weak self] time in
+            if let strongSelf = self {
+                if let progressHandler = strongSelf.progressHandler {
+                    progressHandler(time)
+                }
+
+                if let endTime = strongSelf.playEndTime {
+                    let timeSecond = time.seconds
+                    if timeSecond >= endTime {
+                        strongSelf.stop()
+                    }
+                }
+            }
+        })
+    }
+
+    private func timeUnObserver(){
+        if let timeObserver = self.timeObserver {
+            self.player.removeTimeObserver(timeObserver)
         }
     }
 
