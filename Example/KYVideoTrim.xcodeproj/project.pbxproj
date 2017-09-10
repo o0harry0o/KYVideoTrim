@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		02ABD7E424D349A03AD5F00A /* Pods_KYVideoTrim_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B70270FBC97BF3C44893CCBD /* Pods_KYVideoTrim_Tests.framework */; };
+		18F9EF6C1F5FA00F00F71F16 /* example.MOV in Resources */ = {isa = PBXBuildFile; fileRef = 18F9EF6B1F5FA00F00F71F16 /* example.MOV */; };
+		18F9EF701F5FEEBD00F71F16 /* example2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 18F9EF6F1F5FEEBD00F71F16 /* example2.mp4 */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -29,7 +31,9 @@
 
 /* Begin PBXFileReference section */
 		05657FD70783A096FFA4DF0D /* Pods-KYVideoTrim_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KYVideoTrim_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KYVideoTrim_Example/Pods-KYVideoTrim_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		1530C3C0964E17B44C47CCAC /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		1530C3C0964E17B44C47CCAC /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		18F9EF6B1F5FA00F00F71F16 /* example.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = example.MOV; sourceTree = "<group>"; };
+		18F9EF6F1F5FEEBD00F71F16 /* example2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = example2.mp4; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* KYVideoTrim_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KYVideoTrim_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -43,10 +47,10 @@
 		85672220B92CEDB0355B839D /* Pods-KYVideoTrim_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KYVideoTrim_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KYVideoTrim_Tests/Pods-KYVideoTrim_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		8C90708EA5D2C9458ABD908D /* Pods_KYVideoTrim_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KYVideoTrim_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B70270FBC97BF3C44893CCBD /* Pods_KYVideoTrim_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KYVideoTrim_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E53D61B0481C208659B2C851 /* KYVideoTrim.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = KYVideoTrim.podspec; path = ../KYVideoTrim.podspec; sourceTree = "<group>"; };
+		E53D61B0481C208659B2C851 /* KYVideoTrim.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = KYVideoTrim.podspec; path = ../KYVideoTrim.podspec; sourceTree = "<group>"; };
 		E6632595809BE5C9B07AA010 /* Pods-KYVideoTrim_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KYVideoTrim_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KYVideoTrim_Tests/Pods-KYVideoTrim_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		ED21EED65C319495FE42DDE4 /* Pods-KYVideoTrim_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KYVideoTrim_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-KYVideoTrim_Example/Pods-KYVideoTrim_Example.release.xcconfig"; sourceTree = "<group>"; };
-		FF5DD8D66DBA4AEE876736DC /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		FF5DD8D66DBA4AEE876736DC /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +111,8 @@
 		607FACD31AFB9204008FA782 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				18F9EF6F1F5FEEBD00F71F16 /* example2.mp4 */,
+				18F9EF6B1F5FA00F00F71F16 /* example.MOV */,
 				607FACD41AFB9204008FA782 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -215,6 +221,7 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = JLMRKUQTA9;
 						LastSwiftMigration = 0820;
 					};
 					607FACE41AFB9204008FA782 = {
@@ -249,8 +256,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
+				18F9EF701F5FEEBD00F71F16 /* example2.mp4 in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
+				18F9EF6C1F5FA00F00F71F16 /* example.MOV in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,6 +514,7 @@
 			baseConfigurationReference = 05657FD70783A096FFA4DF0D /* Pods-KYVideoTrim_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = JLMRKUQTA9;
 				INFOPLIST_FILE = KYVideoTrim/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
@@ -519,6 +529,7 @@
 			baseConfigurationReference = ED21EED65C319495FE42DDE4 /* Pods-KYVideoTrim_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = JLMRKUQTA9;
 				INFOPLIST_FILE = KYVideoTrim/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;

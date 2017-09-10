@@ -1,0 +1,23 @@
+{
+  "name": "KYVideoTrim",
+  "version": "0.1.0",
+  "summary": "A short description of KYVideoTrim.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/kyleYang/KYVideoTrim",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "kyleYang": "yangzychina@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/kyleYang/KYVideoTrim.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "KYVideoTrim/Classes/**/*",
+  "frameworks": "AVFoundation"
+}

@@ -1,0 +1,16 @@
+PODS:
+  - KYVideoTrim (0.1.0)
+
+DEPENDENCIES:
+  - KYVideoTrim (from `../`)
+
+EXTERNAL SOURCES:
+  KYVideoTrim:
+    :path: ../
+
+SPEC CHECKSUMS:
+  KYVideoTrim: def84c0400a686ea77563a5daf19ec4dbc18320a
+
+PODFILE CHECKSUM: 28b85d958514e2c067279bdfa68ecf710be2e9d3
+
+COCOAPODS: 1.3.1

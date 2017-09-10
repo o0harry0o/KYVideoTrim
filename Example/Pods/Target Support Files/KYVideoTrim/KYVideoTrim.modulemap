@@ -1,0 +1,6 @@
+framework module KYVideoTrim {
+  umbrella header "KYVideoTrim-umbrella.h"
+
+  export *
+  module * { export * }
+}

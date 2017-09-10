@@ -1,0 +1,723 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D4306C4D67D4E1685577461EB608D3E /* KYVideoKeyframeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550E55C8E7A4FD9B3A4BDA931495B278 /* KYVideoKeyframeManager.swift */; };
+		47DA235B31612727A785F8DBDC2DCB37 /* Pods-KYVideoTrim_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C97C63C588FFD6F75AF2AC47B6990B5E /* Pods-KYVideoTrim_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		852C8EC0DDF32481C3D975D660689D9C /* KYVideoRangeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AABF566B34EE9719E2E858052203D0 /* KYVideoRangeSlider.swift */; };
+		8FD59D6F0A71FA7623B66045A19F5726 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2828B7422B8C5C7BC4BF9C20A6D7B397 /* Foundation.framework */; };
+		9578E19AD4781B1454AABE4BD30B9029 /* Pods-KYVideoTrim_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E07F3715533BB10E27834F8AB274309C /* Pods-KYVideoTrim_Example-dummy.m */; };
+		AD320B97418FA97DAD46B5A0858F986A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 840966EAD0718963750ABB9F4A6EB218 /* AVFoundation.framework */; };
+		B32BC2EA620AC62566B3BC5FBB5618FE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2828B7422B8C5C7BC4BF9C20A6D7B397 /* Foundation.framework */; };
+		C8F5C34A727A7BB13234150CBD1CCFDE /* KYVideoTrim-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D2C2BD10575511D187EA52DF5835A705 /* KYVideoTrim-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CCE35A5E1885CE32665EEA8389F5C071 /* Pods-KYVideoTrim_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F0C4C5B941BE36E5669547B5F61F9B5 /* Pods-KYVideoTrim_Tests-dummy.m */; };
+		D9BEEA4343F22C6564E01300C9413E12 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2828B7422B8C5C7BC4BF9C20A6D7B397 /* Foundation.framework */; };
+		E66EFED5378280783E337D72BFB74CF4 /* KYVideoTrim-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F7CAD69DBAD7BED30538D897075239 /* KYVideoTrim-dummy.m */; };
+		EDB4467DEF32E396FA6FDEC33E286F27 /* KYVideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1473E321BE33359981A45BFCE1004AC0 /* KYVideoPlayerViewController.swift */; };
+		F4E093D485AACA60F74F64BDDF05F681 /* Pods-KYVideoTrim_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 95A193CD7EBA7176F96F78655B98E791 /* Pods-KYVideoTrim_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4CA6DE4251B6205D3730552A2F29BAEB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D76F4B4FD95828FAE1F53EBE839786CE;
+			remoteInfo = KYVideoTrim;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		01E0F09F5BC9F4C4E3BF61879BBFFAD8 /* Pods-KYVideoTrim_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-KYVideoTrim_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		0FCBD1C684F798311B9CE4588155EFEF /* Pods_KYVideoTrim_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_KYVideoTrim_Tests.framework; path = "Pods-KYVideoTrim_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1473E321BE33359981A45BFCE1004AC0 /* KYVideoPlayerViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KYVideoPlayerViewController.swift; path = KYVideoTrim/Classes/KYVideoPlayerViewController.swift; sourceTree = "<group>"; };
+		1B1E384A264DAB664F646AAD94BAB91E /* KYVideoTrim-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KYVideoTrim-prefix.pch"; sourceTree = "<group>"; };
+		2828B7422B8C5C7BC4BF9C20A6D7B397 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		2F0C4C5B941BE36E5669547B5F61F9B5 /* Pods-KYVideoTrim_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-KYVideoTrim_Tests-dummy.m"; sourceTree = "<group>"; };
+		327CE3D239A4F1C44F3785FF8C1F0A08 /* Pods-KYVideoTrim_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-KYVideoTrim_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		34665ECD6EC6CAE98D7DAB716B14F524 /* Pods_KYVideoTrim_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_KYVideoTrim_Example.framework; path = "Pods-KYVideoTrim_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		35AE0307BD925E2CCBF98802EC8FE45E /* Pods-KYVideoTrim_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-KYVideoTrim_Example.modulemap"; sourceTree = "<group>"; };
+		3DE7B3CA32B0416B9DCA125156EC4FFE /* KYVideoTrim.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = KYVideoTrim.xcconfig; sourceTree = "<group>"; };
+		4CD5544AD99777F60D10FAC4A2238808 /* Pods-KYVideoTrim_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-KYVideoTrim_Tests-resources.sh"; sourceTree = "<group>"; };
+		550E55C8E7A4FD9B3A4BDA931495B278 /* KYVideoKeyframeManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KYVideoKeyframeManager.swift; path = KYVideoTrim/Classes/KYVideoKeyframeManager.swift; sourceTree = "<group>"; };
+		56EDA99AEFA485BD9F45D12D0170E52C /* Pods-KYVideoTrim_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-KYVideoTrim_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		60A42906221170093C89876FE3991BE2 /* Pods-KYVideoTrim_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-KYVideoTrim_Example-resources.sh"; sourceTree = "<group>"; };
+		63A232CBFC221A857127DFB4B21B788D /* Pods-KYVideoTrim_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-KYVideoTrim_Tests.modulemap"; sourceTree = "<group>"; };
+		69C9C9D514BBF62F5BC27E4A57C98E7F /* Pods-KYVideoTrim_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-KYVideoTrim_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		6E182F4D9F1DBB53BAFB9BB5704E5C7B /* Pods-KYVideoTrim_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-KYVideoTrim_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		840966EAD0718963750ABB9F4A6EB218 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		86AABF566B34EE9719E2E858052203D0 /* KYVideoRangeSlider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KYVideoRangeSlider.swift; path = KYVideoTrim/Classes/KYVideoRangeSlider.swift; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		94B0AD35F245C064E983ABC3474ED906 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		95A193CD7EBA7176F96F78655B98E791 /* Pods-KYVideoTrim_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-KYVideoTrim_Tests-umbrella.h"; sourceTree = "<group>"; };
+		9BD397821FE3AEA4EE7620B587A1B8F8 /* Pods-KYVideoTrim_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-KYVideoTrim_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		A5ABC6BC470DEFE73780DDF53C9337F9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A9F7CAD69DBAD7BED30538D897075239 /* KYVideoTrim-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "KYVideoTrim-dummy.m"; sourceTree = "<group>"; };
+		BF3F0625637A4820AB006826A1757CB5 /* Pods-KYVideoTrim_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-KYVideoTrim_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		C869768A4E76262A671D3E8C3CD8BE66 /* KYVideoTrim.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = KYVideoTrim.framework; path = KYVideoTrim.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C97C63C588FFD6F75AF2AC47B6990B5E /* Pods-KYVideoTrim_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-KYVideoTrim_Example-umbrella.h"; sourceTree = "<group>"; };
+		CF9DEB7B50843015DC59EE121F656633 /* Pods-KYVideoTrim_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-KYVideoTrim_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		D2C2BD10575511D187EA52DF5835A705 /* KYVideoTrim-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KYVideoTrim-umbrella.h"; sourceTree = "<group>"; };
+		D519F3CE22E8F5E780DF57B9DE650A02 /* KYVideoTrim.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = KYVideoTrim.modulemap; sourceTree = "<group>"; };
+		E07F3715533BB10E27834F8AB274309C /* Pods-KYVideoTrim_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-KYVideoTrim_Example-dummy.m"; sourceTree = "<group>"; };
+		E2CC4212187E9983272958745E733E9C /* Pods-KYVideoTrim_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-KYVideoTrim_Example.release.xcconfig"; sourceTree = "<group>"; };
+		E93C699A81AD4BF54C10EA119853CE92 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EAE3A5E149A2830E96FD7F8CD626A878 /* Pods-KYVideoTrim_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-KYVideoTrim_Example-frameworks.sh"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		284098B09780CFBA9A9835AC6FA139F4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B32BC2EA620AC62566B3BC5FBB5618FE /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8814C81A029B0F8EA3C8C5903915FB29 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD320B97418FA97DAD46B5A0858F986A /* AVFoundation.framework in Frameworks */,
+				D9BEEA4343F22C6564E01300C9413E12 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D07555D54EC9CD5390D4FE394E11B75E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8FD59D6F0A71FA7623B66045A19F5726 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AB9C43F4BAD2992BD9EE60E0C1AC390B /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6FF2F370276170379FF9E6560CED6349 /* Pods-KYVideoTrim_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				94B0AD35F245C064E983ABC3474ED906 /* Info.plist */,
+				63A232CBFC221A857127DFB4B21B788D /* Pods-KYVideoTrim_Tests.modulemap */,
+				01E0F09F5BC9F4C4E3BF61879BBFFAD8 /* Pods-KYVideoTrim_Tests-acknowledgements.markdown */,
+				69C9C9D514BBF62F5BC27E4A57C98E7F /* Pods-KYVideoTrim_Tests-acknowledgements.plist */,
+				2F0C4C5B941BE36E5669547B5F61F9B5 /* Pods-KYVideoTrim_Tests-dummy.m */,
+				6E182F4D9F1DBB53BAFB9BB5704E5C7B /* Pods-KYVideoTrim_Tests-frameworks.sh */,
+				4CD5544AD99777F60D10FAC4A2238808 /* Pods-KYVideoTrim_Tests-resources.sh */,
+				95A193CD7EBA7176F96F78655B98E791 /* Pods-KYVideoTrim_Tests-umbrella.h */,
+				CF9DEB7B50843015DC59EE121F656633 /* Pods-KYVideoTrim_Tests.debug.xcconfig */,
+				9BD397821FE3AEA4EE7620B587A1B8F8 /* Pods-KYVideoTrim_Tests.release.xcconfig */,
+			);
+			name = "Pods-KYVideoTrim_Tests";
+			path = "Target Support Files/Pods-KYVideoTrim_Tests";
+			sourceTree = "<group>";
+		};
+		700F4413671C5D608AB57446C847DACA /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DF76C123E34BFA2BC70A4891F83DCE1A /* KYVideoTrim */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		7BDEC713B5ECA9520F27380B663B341D /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				A5ABC6BC470DEFE73780DDF53C9337F9 /* Info.plist */,
+				D519F3CE22E8F5E780DF57B9DE650A02 /* KYVideoTrim.modulemap */,
+				3DE7B3CA32B0416B9DCA125156EC4FFE /* KYVideoTrim.xcconfig */,
+				A9F7CAD69DBAD7BED30538D897075239 /* KYVideoTrim-dummy.m */,
+				1B1E384A264DAB664F646AAD94BAB91E /* KYVideoTrim-prefix.pch */,
+				D2C2BD10575511D187EA52DF5835A705 /* KYVideoTrim-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/KYVideoTrim";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				700F4413671C5D608AB57446C847DACA /* Development Pods */,
+				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
+				B6B449BFD041759F9B5C884EC73D9A51 /* Products */,
+				827F4C386B4F8A7C415313AA2040924F /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		827F4C386B4F8A7C415313AA2040924F /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				E857A9AA43E6DD35D1A6B38F43C88C1A /* Pods-KYVideoTrim_Example */,
+				6FF2F370276170379FF9E6560CED6349 /* Pods-KYVideoTrim_Tests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		AB9C43F4BAD2992BD9EE60E0C1AC390B /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				840966EAD0718963750ABB9F4A6EB218 /* AVFoundation.framework */,
+				2828B7422B8C5C7BC4BF9C20A6D7B397 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		B6B449BFD041759F9B5C884EC73D9A51 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C869768A4E76262A671D3E8C3CD8BE66 /* KYVideoTrim.framework */,
+				34665ECD6EC6CAE98D7DAB716B14F524 /* Pods_KYVideoTrim_Example.framework */,
+				0FCBD1C684F798311B9CE4588155EFEF /* Pods_KYVideoTrim_Tests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DF76C123E34BFA2BC70A4891F83DCE1A /* KYVideoTrim */ = {
+			isa = PBXGroup;
+			children = (
+				550E55C8E7A4FD9B3A4BDA931495B278 /* KYVideoKeyframeManager.swift */,
+				1473E321BE33359981A45BFCE1004AC0 /* KYVideoPlayerViewController.swift */,
+				86AABF566B34EE9719E2E858052203D0 /* KYVideoRangeSlider.swift */,
+				7BDEC713B5ECA9520F27380B663B341D /* Support Files */,
+			);
+			name = KYVideoTrim;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		E857A9AA43E6DD35D1A6B38F43C88C1A /* Pods-KYVideoTrim_Example */ = {
+			isa = PBXGroup;
+			children = (
+				E93C699A81AD4BF54C10EA119853CE92 /* Info.plist */,
+				35AE0307BD925E2CCBF98802EC8FE45E /* Pods-KYVideoTrim_Example.modulemap */,
+				BF3F0625637A4820AB006826A1757CB5 /* Pods-KYVideoTrim_Example-acknowledgements.markdown */,
+				56EDA99AEFA485BD9F45D12D0170E52C /* Pods-KYVideoTrim_Example-acknowledgements.plist */,
+				E07F3715533BB10E27834F8AB274309C /* Pods-KYVideoTrim_Example-dummy.m */,
+				EAE3A5E149A2830E96FD7F8CD626A878 /* Pods-KYVideoTrim_Example-frameworks.sh */,
+				60A42906221170093C89876FE3991BE2 /* Pods-KYVideoTrim_Example-resources.sh */,
+				C97C63C588FFD6F75AF2AC47B6990B5E /* Pods-KYVideoTrim_Example-umbrella.h */,
+				327CE3D239A4F1C44F3785FF8C1F0A08 /* Pods-KYVideoTrim_Example.debug.xcconfig */,
+				E2CC4212187E9983272958745E733E9C /* Pods-KYVideoTrim_Example.release.xcconfig */,
+			);
+			name = "Pods-KYVideoTrim_Example";
+			path = "Target Support Files/Pods-KYVideoTrim_Example";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		E5BF524E4E8265088025845441C33F02 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C8F5C34A727A7BB13234150CBD1CCFDE /* KYVideoTrim-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F98894EF379849E82FBF3CF26CE9E3E2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47DA235B31612727A785F8DBDC2DCB37 /* Pods-KYVideoTrim_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB3F33ABC44D11AEEE965FA6C161B7BE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4E093D485AACA60F74F64BDDF05F681 /* Pods-KYVideoTrim_Tests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		11FECF11493FD920F889A3DD7958C2B1 /* Pods-KYVideoTrim_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 55E55EEE4D3B9E66DC47F1B7B99F1F21 /* Build configuration list for PBXNativeTarget "Pods-KYVideoTrim_Example" */;
+			buildPhases = (
+				CF66FFCED36BD45180ED0A84BF33EAF0 /* Sources */,
+				D07555D54EC9CD5390D4FE394E11B75E /* Frameworks */,
+				F98894EF379849E82FBF3CF26CE9E3E2 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CF184BC9250D83DE78B7A5082E6B9C36 /* PBXTargetDependency */,
+			);
+			name = "Pods-KYVideoTrim_Example";
+			productName = "Pods-KYVideoTrim_Example";
+			productReference = 34665ECD6EC6CAE98D7DAB716B14F524 /* Pods_KYVideoTrim_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D76F4B4FD95828FAE1F53EBE839786CE /* KYVideoTrim */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9FA71811E6DE94340777FE8A347C6721 /* Build configuration list for PBXNativeTarget "KYVideoTrim" */;
+			buildPhases = (
+				4B8B2F3964CA7726766F6DDF97DA4CD2 /* Sources */,
+				8814C81A029B0F8EA3C8C5903915FB29 /* Frameworks */,
+				E5BF524E4E8265088025845441C33F02 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KYVideoTrim;
+			productName = KYVideoTrim;
+			productReference = C869768A4E76262A671D3E8C3CD8BE66 /* KYVideoTrim.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		E51405FEAA48FBDFE2D761D54D147906 /* Pods-KYVideoTrim_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6348C960C887BAAECED240E897F8A3EE /* Build configuration list for PBXNativeTarget "Pods-KYVideoTrim_Tests" */;
+			buildPhases = (
+				4F47B7E3B759F65E567905F350EA5AB9 /* Sources */,
+				284098B09780CFBA9A9835AC6FA139F4 /* Frameworks */,
+				FB3F33ABC44D11AEEE965FA6C161B7BE /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-KYVideoTrim_Tests";
+			productName = "Pods-KYVideoTrim_Tests";
+			productReference = 0FCBD1C684F798311B9CE4588155EFEF /* Pods_KYVideoTrim_Tests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = B6B449BFD041759F9B5C884EC73D9A51 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D76F4B4FD95828FAE1F53EBE839786CE /* KYVideoTrim */,
+				11FECF11493FD920F889A3DD7958C2B1 /* Pods-KYVideoTrim_Example */,
+				E51405FEAA48FBDFE2D761D54D147906 /* Pods-KYVideoTrim_Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4B8B2F3964CA7726766F6DDF97DA4CD2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D4306C4D67D4E1685577461EB608D3E /* KYVideoKeyframeManager.swift in Sources */,
+				EDB4467DEF32E396FA6FDEC33E286F27 /* KYVideoPlayerViewController.swift in Sources */,
+				852C8EC0DDF32481C3D975D660689D9C /* KYVideoRangeSlider.swift in Sources */,
+				E66EFED5378280783E337D72BFB74CF4 /* KYVideoTrim-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4F47B7E3B759F65E567905F350EA5AB9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CCE35A5E1885CE32665EEA8389F5C071 /* Pods-KYVideoTrim_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF66FFCED36BD45180ED0A84BF33EAF0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9578E19AD4781B1454AABE4BD30B9029 /* Pods-KYVideoTrim_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CF184BC9250D83DE78B7A5082E6B9C36 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = KYVideoTrim;
+			target = D76F4B4FD95828FAE1F53EBE839786CE /* KYVideoTrim */;
+			targetProxy = 4CA6DE4251B6205D3730552A2F29BAEB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0902E3EFC27A651F734E91DD99F97727 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E2CC4212187E9983272958745E733E9C /* Pods-KYVideoTrim_Example.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-KYVideoTrim_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-KYVideoTrim_Example/Pods-KYVideoTrim_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_KYVideoTrim_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		53C29D32066D97E53C767EF7479AE9D9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9BD397821FE3AEA4EE7620B587A1B8F8 /* Pods-KYVideoTrim_Tests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-KYVideoTrim_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-KYVideoTrim_Tests/Pods-KYVideoTrim_Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_KYVideoTrim_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		717E77604BFBB04BEAF56608A1CB2EDE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A6A03C9B1314C05BD3C2FBD3F65EDF83 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		B0643AF9CF11447F92CCDBC215136167 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3DE7B3CA32B0416B9DCA125156EC4FFE /* KYVideoTrim.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/KYVideoTrim/KYVideoTrim-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/KYVideoTrim/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/KYVideoTrim/KYVideoTrim.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = KYVideoTrim;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C9E3E5560A35931A5DD811D049EEF687 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 327CE3D239A4F1C44F3785FF8C1F0A08 /* Pods-KYVideoTrim_Example.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-KYVideoTrim_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-KYVideoTrim_Example/Pods-KYVideoTrim_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_KYVideoTrim_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		CD9E6284B8AF79073912637EDD464947 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF9DEB7B50843015DC59EE121F656633 /* Pods-KYVideoTrim_Tests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-KYVideoTrim_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-KYVideoTrim_Tests/Pods-KYVideoTrim_Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_KYVideoTrim_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F5221866882A265BE51F246BC615C207 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3DE7B3CA32B0416B9DCA125156EC4FFE /* KYVideoTrim.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/KYVideoTrim/KYVideoTrim-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/KYVideoTrim/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/KYVideoTrim/KYVideoTrim.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = KYVideoTrim;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A6A03C9B1314C05BD3C2FBD3F65EDF83 /* Debug */,
+				717E77604BFBB04BEAF56608A1CB2EDE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		55E55EEE4D3B9E66DC47F1B7B99F1F21 /* Build configuration list for PBXNativeTarget "Pods-KYVideoTrim_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9E3E5560A35931A5DD811D049EEF687 /* Debug */,
+				0902E3EFC27A651F734E91DD99F97727 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6348C960C887BAAECED240E897F8A3EE /* Build configuration list for PBXNativeTarget "Pods-KYVideoTrim_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD9E6284B8AF79073912637EDD464947 /* Debug */,
+				53C29D32066D97E53C767EF7479AE9D9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9FA71811E6DE94340777FE8A347C6721 /* Build configuration list for PBXNativeTarget "KYVideoTrim" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B0643AF9CF11447F92CCDBC215136167 /* Debug */,
+				F5221866882A265BE51F246BC615C207 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
