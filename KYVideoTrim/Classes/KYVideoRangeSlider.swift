@@ -7,7 +7,26 @@
 //
 
 import UIKit
+import Foundation
 import AVFoundation
+
+
+public enum KYVideoTrimQuality: Int {
+    case low = 0
+    case medium = 1
+    case highest = 2
+
+    public var description: String {
+        switch self {
+        case .low:
+            return AVAssetExportPresetLowQuality
+        case .medium:
+            return AVAssetExportPresetMediumQuality
+        case .highest: return AVAssetExportPresetHighestQuality
+
+        }
+    }
+}
 
 
 internal class KYVideoRangeSliderThumbView : UIImageView{
@@ -65,7 +84,7 @@ internal class KYVideoRangeSliderUnTrackLayer: CAShapeLayer {
 }
 
 
-
+public typealias KYVideoTrimCompleteHandler = (AVAssetExportSessionStatus,String) -> Void
 
 @objc public protocol KYVideoRangeSliderDelegate : NSObjectProtocol{
 
@@ -128,6 +147,10 @@ open class KYVideoRangeSlider: UIView {
         return trackLength
     }
 
+    public fileprivate(set) var trimVideoPath : String!
+    public var trimQuality : KYVideoTrimQuality = .medium
+    fileprivate var trimExportSession : AVAssetExportSession!
+
     public var displayDuration : Double{
         get{
             return Double(self.sliderWidth/self.videoTrackLength)*self.duration
@@ -146,6 +169,7 @@ open class KYVideoRangeSlider: UIView {
 
         }
     }
+
     public private(set) var videoAsset : AVAsset?{
         didSet{
             if let asset = videoAsset {
@@ -260,7 +284,10 @@ open class KYVideoRangeSlider: UIView {
 
     //MARK: private method
     private func setup(){
-        
+
+        let tempDir : NSString = NSTemporaryDirectory() as NSString
+        self.trimVideoPath = tempDir.appendingPathComponent("trimvideo.mp4")
+
         self.trackLayer.rangeSlider = self
         self.layer.addSublayer(self.trackLayer)
         self.trackLayer.contentsScale = UIScreen.main.scale
@@ -402,6 +429,18 @@ open class KYVideoRangeSlider: UIView {
         return self.mapperTimeToRightPosition(positionTime)
     }
 
+    private func deleteTrimVideoFile(){
+          let fm = FileManager.default
+          let exist = fm.fileExists(atPath: self.trimVideoPath)
+        if (exist){
+            do{
+                try fm.removeItem(atPath: self.trimVideoPath)
+            }catch{
+                print("remove file error %@",error)
+            }
+
+        }
+    }
 
 
     //MARK: action
@@ -427,6 +466,80 @@ open class KYVideoRangeSlider: UIView {
         }else if gesture.state == .ended{
             self.delegate?.videoRangeSlider?(self, lowerValue: self.lowerValue, upperValue: self.upperValue)
         }
+    }
+
+
+    private func videoNextQuality(_ quality : KYVideoTrimQuality) -> KYVideoTrimQuality{
+        var qualityValue = quality.rawValue
+        qualityValue -= 1
+        let nextQuality = KYVideoTrimQuality(rawValue: qualityValue)
+
+        if let value = nextQuality {
+            return value
+        }
+        return KYVideoTrimQuality.highest
+
+    }
+
+    private func findVideoQuality(_ exportPresets : [String],quality : KYVideoTrimQuality) ->KYVideoTrimQuality?{
+
+        if exportPresets.contains(quality.description){
+            return quality
+        }
+        var nextQuality = self.videoNextQuality(quality)
+        var qualityArray : [KYVideoTrimQuality] = []
+        while nextQuality != quality {
+            qualityArray.append(nextQuality)
+            nextQuality = self.videoNextQuality(nextQuality)
+        }
+
+        for quality in qualityArray {
+            if exportPresets.contains(quality.description){
+                return quality
+            }
+        }
+        return nil
+
+    }
+
+
+    public func trimVideo(_ complete : @escaping KYVideoTrimCompleteHandler){
+
+        if let _ = self.videoAsset {
+
+        }else{
+            complete(.unknown, self.trimVideoPath)
+        }
+
+        self.deleteTrimVideoFile()
+
+        let compatiblePresets = AVAssetExportSession.exportPresets(compatibleWith: self.videoAsset!)
+
+        let videoQuality = self.findVideoQuality(compatiblePresets, quality: trimQuality)
+
+        if let _ = videoQuality {
+
+        }else{
+            complete(.unknown, self.trimVideoPath)
+        }
+
+        self.trimExportSession = AVAssetExportSession(asset: self.videoAsset!, presetName: videoQuality!.description)
+        let trimVideoURL = NSURL(fileURLWithPath: self.trimVideoPath) as URL
+        self.trimExportSession.outputURL = trimVideoURL
+        self.trimExportSession.outputFileType = AVFileTypeMPEG4
+
+        let starCMTime = CMTimeMakeWithSeconds(self.lowerValue, self.videoAsset!.duration.timescale)
+        let durationCMTime = CMTimeMakeWithSeconds(self.upperValue-self.lowerValue, self.videoAsset!.duration.timescale);
+        let rangeCMTime = CMTimeRangeMake(starCMTime, durationCMTime);
+
+        self.trimExportSession.timeRange = rangeCMTime
+
+        self.trimExportSession.exportAsynchronously {
+            DispatchQueue.main.async {
+                complete(self.trimExportSession.status, self.trimVideoPath)
+            }
+        }
+    
     }
 
 

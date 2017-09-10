@@ -36,6 +36,10 @@ class ViewController: UIViewController {
 
         self.timeLabel.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(self.timeLabel)
+        self.timeLabel.isUserInteractionEnabled = true
+
+        let tapAction = UITapGestureRecognizer(target: self, action: #selector(ViewController.trimVideo(_:)))
+        self.timeLabel.addGestureRecognizer(tapAction)
 
         var constraints : [NSLayoutConstraint] = []
 
@@ -67,6 +71,13 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+
+    @objc func trimVideo(_ sender : Any){
+        self.slider.trimQuality = .low
+        self.slider.trimVideo { (status, path) in
+
+        }
     }
 
 }
