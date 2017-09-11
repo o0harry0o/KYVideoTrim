@@ -156,6 +156,7 @@ open class KYVideoKeyframeManager: NSObject {
         var requestedCount = 0
         if second <= 3{
             requestedCount = second * 2
+            requestedCount = max(2, requestedCount)
         }else if second <= 10 {
             requestedCount = second + 1
         } else {

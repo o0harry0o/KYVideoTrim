@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		02ABD7E424D349A03AD5F00A /* Pods_KYVideoTrim_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B70270FBC97BF3C44893CCBD /* Pods_KYVideoTrim_Tests.framework */; };
+		183FB7BF1F6681C50060CFBB /* example3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 183FB7BE1F6681C50060CFBB /* example3.mp4 */; };
+		183FB7C11F6687CB0060CFBB /* example4.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 183FB7C01F6687CB0060CFBB /* example4.mp4 */; };
 		18F9EF6C1F5FA00F00F71F16 /* example.MOV in Resources */ = {isa = PBXBuildFile; fileRef = 18F9EF6B1F5FA00F00F71F16 /* example.MOV */; };
 		18F9EF701F5FEEBD00F71F16 /* example2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 18F9EF6F1F5FEEBD00F71F16 /* example2.mp4 */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
@@ -32,6 +34,8 @@
 /* Begin PBXFileReference section */
 		05657FD70783A096FFA4DF0D /* Pods-KYVideoTrim_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KYVideoTrim_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KYVideoTrim_Example/Pods-KYVideoTrim_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		1530C3C0964E17B44C47CCAC /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		183FB7BE1F6681C50060CFBB /* example3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = example3.mp4; sourceTree = "<group>"; };
+		183FB7C01F6687CB0060CFBB /* example4.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = example4.mp4; sourceTree = "<group>"; };
 		18F9EF6B1F5FA00F00F71F16 /* example.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = example.MOV; sourceTree = "<group>"; };
 		18F9EF6F1F5FEEBD00F71F16 /* example2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = example2.mp4; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* KYVideoTrim_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KYVideoTrim_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,6 +115,8 @@
 		607FACD31AFB9204008FA782 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				183FB7C01F6687CB0060CFBB /* example4.mp4 */,
+				183FB7BE1F6681C50060CFBB /* example3.mp4 */,
 				18F9EF6F1F5FEEBD00F71F16 /* example2.mp4 */,
 				18F9EF6B1F5FA00F00F71F16 /* example.MOV */,
 				607FACD41AFB9204008FA782 /* Info.plist */,
@@ -257,9 +263,11 @@
 			files = (
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				18F9EF701F5FEEBD00F71F16 /* example2.mp4 in Resources */,
+				183FB7C11F6687CB0060CFBB /* example4.mp4 in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 				18F9EF6C1F5FA00F00F71F16 /* example.MOV in Resources */,
+				183FB7BF1F6681C50060CFBB /* example3.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

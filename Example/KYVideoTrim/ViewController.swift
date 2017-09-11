@@ -27,6 +27,7 @@ class ViewController: UIViewController {
         self.slider.leftThumbImage = UIImage(named:"thumb")
         self.slider.rightThumbImage = UIImage(named:"thumb")
         self.slider.thumbWidth = 10
+//        self.slider.trimQuality = .highest
         self.view.addSubview(self.slider)
 
         let playView = self.videoPlayerVC.view!
@@ -74,7 +75,7 @@ class ViewController: UIViewController {
     }
 
     @objc func trimVideo(_ sender : Any){
-        self.slider.trimQuality = .low
+        self.slider.trimQuality = .highest
         self.slider.trimVideo { (status, path) in
 
         }
@@ -91,7 +92,7 @@ extension ViewController : KYVideoRangeSliderDelegate{
 
     func videoRangeSlider(_ slider: KYVideoRangeSlider, lowerValue: Double, upperValue: Double) {
 
-        self.videoPlayerVC.seek(to:slider.mapperToCMTime(lowerValue))
+        self.videoPlayerVC.seek(to:lowerValue)
         self.videoPlayerVC.playEndTime = upperValue
         let lowString = String(format: "%.1f", slider.lowerValue)
         let upperString = String(format: "%.1f", slider.upperValue)

@@ -101,8 +101,20 @@ open class KYVideoRangeSlider: UIView {
 
     //MARK: property
 
-    public var maxTrackTime : Double = 10.0
-    public var minTrackTime : Double = 3.0
+    public var maxTrackTime : Double = 10.0{
+        didSet{
+            if self.maxTrackTime < self.minTrackTime {
+                fatalError("error maxTrackTime < minTrackTime")
+            }
+        }
+    }
+    public var minTrackTime : Double = 3.0{
+        didSet{
+            if self.maxTrackTime < self.minTrackTime {
+                fatalError("error maxTrackTime < minTrackTime")
+            }
+        }
+    }
     public var trackedDuration : Double{
         get{
             return self.upperValue - self.lowerValue
@@ -158,12 +170,18 @@ open class KYVideoRangeSlider: UIView {
     }
     public private(set) var duration : Double = 0{
         didSet{
-            if (duration > maxTrackTime){
-                rangeStartTime = 0
-                rangeEndTime = maxTrackTime
-            }else{
-                rangeStartTime = 0
-                rangeEndTime = duration
+            if (self.duration < self.minTrackTime){
+                self.minTrackTime = self.duration
+                self.maxTrackTime = self.duration
+                self.rangeStartTime = 0
+                self.rangeEndTime = duration
+            }else if (self.duration < self.maxTrackTime){
+                self.maxTrackTime = self.duration
+                self.rangeStartTime = 0
+                self.rangeEndTime = duration
+            }else if (duration > maxTrackTime){
+                self.rangeStartTime = 0
+                self.rangeEndTime = maxTrackTime
             }
             self.updateInitState()
 
@@ -188,12 +206,13 @@ open class KYVideoRangeSlider: UIView {
             }else if(duration <= 3.0){
                 count = videoKeyframes.count
                 self.keyframeWidth = 40
-                var contraintsValue =  CGFloat(count) * self.keyframeWidth - self.frame.width
+                var contraintsValue =  CGFloat(count) * self.keyframeWidth - (self.sliderWidth)
                 if contraintsValue > 0 {
                     contraintsValue = 0
-                    self.keyframeWidth = self.frame.width/CGFloat(count)
+                    self.keyframeWidth = self.sliderWidth/CGFloat(count)
                 }
-                self.collectionViewTraingContraint.constant = contraintsValue
+                self.collectionViewTraingContraint.constant = self.collectionViewTraingContraint.constant + contraintsValue
+                self.rightThumbPositionX = self.collectionViewTraingContraint.constant+self.thumbWidth
 
             }else{
                 count = videoKeyframes.count
@@ -224,9 +243,10 @@ open class KYVideoRangeSlider: UIView {
             self.collectionViewTraingContraint.constant = -self.thumbWidth
         }
     }
+
     fileprivate var sliderWidth : CGFloat{
         get{
-            return self.frame.width - self.thumbWidth*2
+            return self.frame.width - self.collectionViewLeadingContraint.constant + self.collectionViewTraingContraint.constant
         }
     }
 
@@ -376,14 +396,14 @@ open class KYVideoRangeSlider: UIView {
     }
 
     fileprivate func mapperRightPositonToTime(_ postionX : CGFloat) -> Double{
-        return Double((self.sliderWidth+postionX)/self.sliderWidth)*self.displayDuration + self.rangeStartTime
+        return Double((self.frame.width - 2*self.thumbWidth + postionX)/self.sliderWidth)*self.displayDuration + self.rangeStartTime
     }
     //mapper the time to position
     fileprivate func mapperTimeToLeftPosition(_ time : Double) -> CGFloat{
         return CGFloat((time - rangeStartTime)/self.displayDuration) * self.sliderWidth
     }
     fileprivate func mapperTimeToRightPosition(_ time : Double) -> CGFloat{
-        return  CGFloat((time - self.rangeStartTime)/self.displayDuration) * self.sliderWidth - self.sliderWidth
+        return  CGFloat((time - self.rangeStartTime)/self.displayDuration) * self.sliderWidth - self.frame.width + 2*self.thumbWidth
     }
 
     //mapper double value to CMTime
@@ -399,6 +419,8 @@ open class KYVideoRangeSlider: UIView {
         var postion = postionX
         if postion < 0 {
             postion = 0
+        }else if postion > self.sliderWidth{
+            postion = self.sliderWidth
         }
 
         var positionTime = self.mapperLeftPositonToTime(postion)
@@ -413,8 +435,8 @@ open class KYVideoRangeSlider: UIView {
 
     private func calucateRightThumbPostion(_ postionX : CGFloat) -> CGFloat{
         var postion = postionX
-        if postion < -self.sliderWidth {
-            postion = -self.sliderWidth
+        if postion < -(self.frame.width - self.thumbWidth) {
+            postion = -(self.frame.width - self.thumbWidth)
         }else if postion > 0 {
             postion = 0
         }

@@ -58,6 +58,7 @@ open class KYVideoPlayerViewController: UIViewController {
     public var progressHandler: KYVideoTrimPlayerProgressHandler?
     public var playbackStateChangedHandler: KYVideoTrimPlayerPlaybackStateChangedHandler?
     public var playEndTime : Double?
+    public var playStartTime : Double?
 
     public var playButtonWidth : CGFloat = 40 {
         didSet{
@@ -182,7 +183,7 @@ open class KYVideoPlayerViewController: UIViewController {
 
 
     public func playFromBeginning() {
-        seek(to: kCMTimeZero)
+        seek(to: 0)
         playFromCurrentTime()
     }
 
@@ -205,20 +206,28 @@ open class KYVideoPlayerViewController: UIViewController {
     }
 
     /// pause and seek to kCMTimeZero
-    public func stop() {
+    public func stop(_ time:Double? = nil) {
         guard playbackState != .stoped else {
             return
         }
         self.player.pause()
-        seek(to: kCMTimeZero)
+        if let time = time{
+            seek(to: time)
+        }else{
+            seek(to: 0)
+        }
+
         playbackState = .stoped
     }
 
     /// seek to time
     ///
     /// - parameter time
-    public func seek(to time: CMTime) {
-        self.player.seek(to: time, toleranceBefore: CMTimeMake(0, self.timeScale), toleranceAfter: CMTimeMake(0, self.timeScale)) {_ in
+    public func seek(to time: Double) {
+
+        let cmTime = CMTimeMakeWithSeconds(time,self.timeScale)
+        self.playStartTime = time
+        self.player.seek(to: cmTime, toleranceBefore: CMTimeMake(0, self.timeScale), toleranceAfter: CMTimeMake(0, self.timeScale)) {_ in
 
         }
     }
@@ -236,7 +245,7 @@ open class KYVideoPlayerViewController: UIViewController {
                 if let endTime = strongSelf.playEndTime {
                     let timeSecond = time.seconds
                     if timeSecond >= endTime {
-                        strongSelf.stop()
+                        strongSelf.stop(strongSelf.playStartTime)
                     }
                 }
             }
