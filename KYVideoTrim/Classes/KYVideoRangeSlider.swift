@@ -29,6 +29,22 @@ public enum KYVideoTrimQuality: Int {
 }
 
 
+public enum KYAssetExportSessionStatus : Int{
+    case unknown
+
+    case waiting
+
+    case exporting
+
+    case completed
+
+    case failed
+
+    case cancelled
+}
+
+
+
 internal class KYVideoRangeSliderThumbView : UIImageView{
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -84,12 +100,12 @@ internal class KYVideoRangeSliderUnTrackLayer: CAShapeLayer {
 }
 
 
-public typealias KYVideoTrimCompleteHandler = (AVAssetExportSessionStatus,String) -> Void
+public typealias KYVideoTrimCompleteHandler = (KYAssetExportSessionStatus,String) -> Void
 
 @objc public protocol KYVideoRangeSliderDelegate : NSObjectProtocol{
 
     @objc optional func videoRangeSliderBeginDragging(_ slider:KYVideoRangeSlider)
-    @objc optional func videoRangeSlider(_ slider:KYVideoRangeSlider, lowerValue : Double,upperValue:Double)
+    @objc optional func videoRangeSlider(_ slider:KYVideoRangeSlider, lowerValue : Float64,upperValue:Float64)
 }
 
 
@@ -101,31 +117,31 @@ open class KYVideoRangeSlider: UIView {
 
     //MARK: property
 
-    public var maxTrackTime : Double = 10.0{
+    public var maxTrackTime : Float64 = 10.0{
         didSet{
             if self.maxTrackTime < self.minTrackTime {
                 fatalError("error maxTrackTime < minTrackTime")
             }
         }
     }
-    public var minTrackTime : Double = 3.0{
+    public var minTrackTime : Float64 = 3.0{
         didSet{
             if self.maxTrackTime < self.minTrackTime {
                 fatalError("error maxTrackTime < minTrackTime")
             }
         }
     }
-    public var trackedDuration : Double{
+    public var trackedDuration : Float64{
         get{
             return self.upperValue - self.lowerValue
         }
     }
-    public var lowerValue: Double{
+    public var lowerValue: Float64{
         get{
             return self.mapperLeftPositonToTime(self.leftThumbPositionX)
         }
     }
-    public var upperValue: Double{
+    public var upperValue: Float64{
         get{
             return self.mapperRightPositonToTime(self.rightThumbPositionX)
         }
@@ -148,8 +164,8 @@ open class KYVideoRangeSlider: UIView {
        return self.sliderWidth - self.leftThumbPositionX + self.rightThumbPositionX
     }
 
-    public fileprivate(set) var rangeStartTime : Double = 0
-    public fileprivate(set) var rangeEndTime : Double = 1
+    public fileprivate(set) var rangeStartTime : Float64 = 0
+    public fileprivate(set) var rangeEndTime : Float64 = 1
     fileprivate var keyframeWidth : CGFloat = 40
     fileprivate var videoTrackLength : CGFloat {
         let trackLength = self.keyframeWidth * CGFloat(self.videoKeyframes.count)
@@ -163,12 +179,12 @@ open class KYVideoRangeSlider: UIView {
     public var trimQuality : KYVideoTrimQuality = .medium
     fileprivate var trimExportSession : AVAssetExportSession!
 
-    public var displayDuration : Double{
+    public var displayDuration : Float64{
         get{
-            return Double(self.sliderWidth/self.videoTrackLength)*self.duration
+            return Float64(self.sliderWidth/self.videoTrackLength)*self.duration
         }
     }
-    public private(set) var duration : Double = 0{
+    public private(set) var duration : Float64 = 0{
         didSet{
             if (self.duration < self.minTrackTime){
                 self.minTrackTime = self.duration
@@ -191,7 +207,7 @@ open class KYVideoRangeSlider: UIView {
     public private(set) var videoAsset : AVAsset?{
         didSet{
             if let asset = videoAsset {
-                duration = Double(CMTimeGetSeconds(asset.duration))
+                duration = Float64(CMTimeGetSeconds(asset.duration))
             }
         }
     }
@@ -201,7 +217,7 @@ open class KYVideoRangeSlider: UIView {
             var count = 0
             if (self.duration > self.maxTrackTime){
                 let percent = self.maxTrackTime/self.duration
-                let percentCount = Double(self.videoKeyframes.count) * percent
+                let percentCount = Float64(self.videoKeyframes.count) * percent
                 self.keyframeWidth = self.sliderWidth / CGFloat(percentCount)
             }else if(duration <= 3.0){
                 count = videoKeyframes.count
@@ -391,28 +407,19 @@ open class KYVideoRangeSlider: UIView {
     }
 
     //mapper the position to time
-    fileprivate func mapperLeftPositonToTime(_ postionX : CGFloat) -> Double{
-        return Double(postionX/self.sliderWidth)*self.displayDuration + self.rangeStartTime
+    fileprivate func mapperLeftPositonToTime(_ postionX : CGFloat) -> Float64{
+        return Float64(postionX/self.sliderWidth)*self.displayDuration + self.rangeStartTime
     }
 
-    fileprivate func mapperRightPositonToTime(_ postionX : CGFloat) -> Double{
-        return Double((self.frame.width - 2*self.thumbWidth + postionX)/self.sliderWidth)*self.displayDuration + self.rangeStartTime
+    fileprivate func mapperRightPositonToTime(_ postionX : CGFloat) -> Float64{
+        return Float64((self.frame.width - 2*self.thumbWidth + postionX)/self.sliderWidth)*self.displayDuration + self.rangeStartTime
     }
     //mapper the time to position
-    fileprivate func mapperTimeToLeftPosition(_ time : Double) -> CGFloat{
+    fileprivate func mapperTimeToLeftPosition(_ time : Float64) -> CGFloat{
         return CGFloat((time - rangeStartTime)/self.displayDuration) * self.sliderWidth
     }
-    fileprivate func mapperTimeToRightPosition(_ time : Double) -> CGFloat{
+    fileprivate func mapperTimeToRightPosition(_ time : Float64) -> CGFloat{
         return  CGFloat((time - self.rangeStartTime)/self.displayDuration) * self.sliderWidth - self.frame.width + 2*self.thumbWidth
-    }
-
-    //mapper double value to CMTime
-    public func mapperToCMTime(_ value : Double) ->CMTime{
-        guard let asset = videoAsset else {
-            return CMTime()
-        }
-        let time = CMTimeMakeWithSeconds(value, asset.duration.timescale)
-        return time
     }
 
     private func calucateLeftThumbPostion(_ postionX : CGFloat) -> CGFloat{
@@ -557,8 +564,16 @@ open class KYVideoRangeSlider: UIView {
         self.trimExportSession.timeRange = rangeCMTime
 
         self.trimExportSession.exportAsynchronously {
-            DispatchQueue.main.async {
-                complete(self.trimExportSession.status, self.trimVideoPath)
+            DispatchQueue.main.async { [weak self] time in
+                if let strongSelf = self {
+                    let value = strongSelf.trimExportSession.status.rawValue
+                    if let exportSessionStatus = KYAssetExportSessionStatus(rawValue: value){
+                        complete(exportSessionStatus,strongSelf.trimVideoPath)
+                    }else{
+                        complete(KYAssetExportSessionStatus.unknown,strongSelf.trimVideoPath)
+                    }
+                }
+                complete(KYAssetExportSessionStatus.unknown,"")
             }
         }
     
@@ -602,12 +617,12 @@ extension KYVideoRangeSlider :  UICollectionViewDataSource,UICollectionViewDeleg
         position = min(position,videoTrackLength)
         let percent = position / CGFloat(videoTrackLength)
 
-        var currentSecond = self.duration * Double(percent)
+        var currentSecond = self.duration * Float64(percent)
         currentSecond = max(currentSecond, 0)
         currentSecond = min(currentSecond, self.duration)
         self.rangeStartTime = currentSecond
 
-        let selecteTime = Double(self.selecteTimeLength/CGFloat(videoTrackLength))*self.duration
+        let selecteTime = Float64(self.selecteTimeLength/CGFloat(videoTrackLength))*self.duration
 
         self.rangeEndTime = self.rangeStartTime+selecteTime
 

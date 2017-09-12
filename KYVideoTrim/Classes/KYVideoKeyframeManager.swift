@@ -15,16 +15,17 @@ open class KYVideoKeyframe: NSObject {
     public var image: UIImage
 
     /// time of wanted
-    public var requestedTime: CMTime
+    public var requestedTime: Float64
 
     /// time of actual
-    public var actualTime: CMTime
+    public var actualTime: Float64
 
     /// Init Method
-    public init(image: UIImage, requestedTime: CMTime, actualTime: CMTime) {
+    public init(image: UIImage, requestedTime: Float64, actualTime: Float64) {
         self.image = image
         self.requestedTime = requestedTime
         self.actualTime = actualTime
+
     }
 }
 
@@ -37,23 +38,13 @@ public typealias KYSequenceOfImagesClosure = ([KYVideoKeyframe]) -> Void
 
 open class KYVideoKeyframeManager: NSObject {
 
-    /// generate image of second
-    ///
-    /// - parameter asset:     AVAsset
-    /// - parameter second:    wanted time, default 0
-    /// - parameter closure:   completed handler
-    open func generateSingleImage(from asset: AVAsset, second: Float64 = 0, closure: @escaping KYSingleImageClosure) {
-        let requestedTime = CMTimeMakeWithSeconds(second, asset.duration.timescale)
-
-        generateSingleImage(from: asset, time: requestedTime, closure: closure)
-    }
 
     /// generate image of time
     ///
     /// - parameter asset:   AVAsset
     /// - parameter time:    wanted time, default kCMTimeZero
     /// - parameter closure: completed handler
-    open func generateSingleImage(from asset: AVAsset, time: CMTime = kCMTimeZero, closure: @escaping KYSingleImageClosure) {
+    open func generateSingleImage(from asset: AVAsset, second: Float64 = 0, closure: @escaping KYSingleImageClosure) {
 
         DispatchQueue.global().async {
 
@@ -65,11 +56,12 @@ open class KYVideoKeyframeManager: NSObject {
             imageGenerator.appliesPreferredTrackTransform = true
 
             var actualTime: CMTime = CMTimeMake(0, asset.duration.timescale)
+            let time = CMTimeMakeWithSeconds(second, asset.duration.timescale)
 
             do {
                 let cgImage = try imageGenerator.copyCGImage(at: time, actualTime: &actualTime)
                 let image = UIImage(cgImage: cgImage, scale: UIScreen.main.scale, orientation: .up)
-                let keyframeImage = KYVideoKeyframe(image: image, requestedTime: time, actualTime: actualTime)
+                let keyframeImage = KYVideoKeyframe(image: image, requestedTime: CMTimeGetSeconds(time), actualTime: CMTimeGetSeconds(actualTime))
 
                 //callback on main queue
                 DispatchQueue.main.async {
@@ -87,24 +79,14 @@ open class KYVideoKeyframeManager: NSObject {
 
     /// generate images of times
     ///
-    /// - parameter asset:     AVAsset
-    /// - parameter seconds:   seconds
-    /// - parameter closure:   completed handler
-    open func generateSequenceOfImages(from asset: AVAsset, seconds: [Float64], closure: @escaping KYSequenceOfImagesClosure) {
-
-        let times = seconds.map { CMTimeMakeWithSeconds($0, asset.duration.timescale) }
-
-        generateSequenceOfImages(from: asset, times: times, closure: closure)
-    }
-
-    /// generate images of times
-    ///
     /// - parameter asset:   AVAsset
     /// - parameter times:   [CMTime]
     /// - parameter closure: completed handler
-    open func generateSequenceOfImages(from asset: AVAsset, times: [CMTime], closure: @escaping KYSequenceOfImagesClosure) {
+    open func generateSequenceOfImages(from asset: AVAsset, seconds: [Float64], closure: @escaping KYSequenceOfImagesClosure) {
 
         DispatchQueue.global().async{
+
+            let times = seconds.map { CMTimeMakeWithSeconds($0, asset.duration.timescale) }
 
             let imageGenerator = AVAssetImageGenerator(asset: asset)
             //如果不设置这两个属性为kCMTimeZero，则实际生成的图片和需要生成的图片会有时间差
@@ -125,7 +107,7 @@ open class KYVideoKeyframeManager: NSObject {
 
                 if result == .succeeded, let cgImage = cgImage {
                     let image = UIImage(cgImage: cgImage, scale: UIScreen.main.scale, orientation: .up)
-                    let keyframeImage = KYVideoKeyframe(image: image, requestedTime: requestedTime, actualTime: actualTime)
+                    let keyframeImage = KYVideoKeyframe(image: image, requestedTime: CMTimeGetSeconds( requestedTime), actualTime: CMTimeGetSeconds(actualTime))
                     keyframeImages.append(keyframeImage)
                 }
 
@@ -133,7 +115,7 @@ open class KYVideoKeyframeManager: NSObject {
                 if completedCount == timeValues.count {
                     //sorted with Asc
                     let sortedKeyframeImages = keyframeImages.sorted {
-                        $0.actualTime.seconds < $1.actualTime.seconds
+                        $0.actualTime < $1.actualTime
                     }
 
                     //perform on main queue

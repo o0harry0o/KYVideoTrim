@@ -40,7 +40,7 @@ public enum KYVideoTrimFillMode: Int {
 }
 
 
-public typealias KYVideoTrimPlayerProgressHandler = (CMTime) -> Void
+public typealias KYVideoTrimPlayerProgressHandler = (Float64) -> Void
 public typealias KYVideoTrimPlayerPlaybackStateChangedHandler = (KYVideoTrimPlayerPlaybackState) -> Void
 
 open class KYVideoPlayerViewController: UIViewController {
@@ -57,8 +57,8 @@ open class KYVideoPlayerViewController: UIViewController {
     }
     public var progressHandler: KYVideoTrimPlayerProgressHandler?
     public var playbackStateChangedHandler: KYVideoTrimPlayerPlaybackStateChangedHandler?
-    public var playEndTime : Double?
-    public var playStartTime : Double?
+    public var playEndTime : Float64?
+    public var playStartTime : Float64?
 
     public var playButtonWidth : CGFloat = 40 {
         didSet{
@@ -206,7 +206,7 @@ open class KYVideoPlayerViewController: UIViewController {
     }
 
     /// pause and seek to kCMTimeZero
-    public func stop(_ time:Double? = nil) {
+    public func stop(_ time:Float64? = nil) {
         guard playbackState != .stoped else {
             return
         }
@@ -223,7 +223,7 @@ open class KYVideoPlayerViewController: UIViewController {
     /// seek to time
     ///
     /// - parameter time
-    public func seek(to time: Double) {
+    public func seek(to time: Float64) {
 
         let cmTime = CMTimeMakeWithSeconds(time,self.timeScale)
         self.playStartTime = time
@@ -239,7 +239,7 @@ open class KYVideoPlayerViewController: UIViewController {
         self.timeObserver = self.player.addPeriodicTimeObserver(forInterval: CMTimeMake(1, self.timeScale), queue: DispatchQueue.main, using: {  [weak self] time in
             if let strongSelf = self {
                 if let progressHandler = strongSelf.progressHandler {
-                    progressHandler(time)
+                    progressHandler(CMTimeGetSeconds(time))
                 }
 
                 if let endTime = strongSelf.playEndTime {
