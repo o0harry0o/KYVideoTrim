@@ -34,36 +34,36 @@
 
 /* Begin PBXFileReference section */
 		01E0F09F5BC9F4C4E3BF61879BBFFAD8 /* Pods-KYVideoTrim_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-KYVideoTrim_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		0FCBD1C684F798311B9CE4588155EFEF /* Pods_KYVideoTrim_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_KYVideoTrim_Tests.framework; path = "Pods-KYVideoTrim_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0FCBD1C684F798311B9CE4588155EFEF /* Pods_KYVideoTrim_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KYVideoTrim_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1473E321BE33359981A45BFCE1004AC0 /* KYVideoPlayerViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KYVideoPlayerViewController.swift; path = KYVideoTrim/Classes/KYVideoPlayerViewController.swift; sourceTree = "<group>"; };
 		1B1E384A264DAB664F646AAD94BAB91E /* KYVideoTrim-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KYVideoTrim-prefix.pch"; sourceTree = "<group>"; };
 		2828B7422B8C5C7BC4BF9C20A6D7B397 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		2F0C4C5B941BE36E5669547B5F61F9B5 /* Pods-KYVideoTrim_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-KYVideoTrim_Tests-dummy.m"; sourceTree = "<group>"; };
 		327CE3D239A4F1C44F3785FF8C1F0A08 /* Pods-KYVideoTrim_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-KYVideoTrim_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		34665ECD6EC6CAE98D7DAB716B14F524 /* Pods_KYVideoTrim_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_KYVideoTrim_Example.framework; path = "Pods-KYVideoTrim_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		35AE0307BD925E2CCBF98802EC8FE45E /* Pods-KYVideoTrim_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-KYVideoTrim_Example.modulemap"; sourceTree = "<group>"; };
+		34665ECD6EC6CAE98D7DAB716B14F524 /* Pods_KYVideoTrim_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KYVideoTrim_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		35AE0307BD925E2CCBF98802EC8FE45E /* Pods-KYVideoTrim_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-KYVideoTrim_Example.modulemap"; sourceTree = "<group>"; };
 		3DE7B3CA32B0416B9DCA125156EC4FFE /* KYVideoTrim.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = KYVideoTrim.xcconfig; sourceTree = "<group>"; };
 		4CD5544AD99777F60D10FAC4A2238808 /* Pods-KYVideoTrim_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-KYVideoTrim_Tests-resources.sh"; sourceTree = "<group>"; };
 		550E55C8E7A4FD9B3A4BDA931495B278 /* KYVideoKeyframeManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KYVideoKeyframeManager.swift; path = KYVideoTrim/Classes/KYVideoKeyframeManager.swift; sourceTree = "<group>"; };
 		56EDA99AEFA485BD9F45D12D0170E52C /* Pods-KYVideoTrim_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-KYVideoTrim_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		60A42906221170093C89876FE3991BE2 /* Pods-KYVideoTrim_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-KYVideoTrim_Example-resources.sh"; sourceTree = "<group>"; };
-		63A232CBFC221A857127DFB4B21B788D /* Pods-KYVideoTrim_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-KYVideoTrim_Tests.modulemap"; sourceTree = "<group>"; };
+		63A232CBFC221A857127DFB4B21B788D /* Pods-KYVideoTrim_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-KYVideoTrim_Tests.modulemap"; sourceTree = "<group>"; };
 		69C9C9D514BBF62F5BC27E4A57C98E7F /* Pods-KYVideoTrim_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-KYVideoTrim_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		6E182F4D9F1DBB53BAFB9BB5704E5C7B /* Pods-KYVideoTrim_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-KYVideoTrim_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		840966EAD0718963750ABB9F4A6EB218 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
 		86AABF566B34EE9719E2E858052203D0 /* KYVideoRangeSlider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KYVideoRangeSlider.swift; path = KYVideoTrim/Classes/KYVideoRangeSlider.swift; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		94B0AD35F245C064E983ABC3474ED906 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95A193CD7EBA7176F96F78655B98E791 /* Pods-KYVideoTrim_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-KYVideoTrim_Tests-umbrella.h"; sourceTree = "<group>"; };
 		9BD397821FE3AEA4EE7620B587A1B8F8 /* Pods-KYVideoTrim_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-KYVideoTrim_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		A5ABC6BC470DEFE73780DDF53C9337F9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A9F7CAD69DBAD7BED30538D897075239 /* KYVideoTrim-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "KYVideoTrim-dummy.m"; sourceTree = "<group>"; };
 		BF3F0625637A4820AB006826A1757CB5 /* Pods-KYVideoTrim_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-KYVideoTrim_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		C869768A4E76262A671D3E8C3CD8BE66 /* KYVideoTrim.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = KYVideoTrim.framework; path = KYVideoTrim.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C869768A4E76262A671D3E8C3CD8BE66 /* KYVideoTrim.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KYVideoTrim.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C97C63C588FFD6F75AF2AC47B6990B5E /* Pods-KYVideoTrim_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-KYVideoTrim_Example-umbrella.h"; sourceTree = "<group>"; };
 		CF9DEB7B50843015DC59EE121F656633 /* Pods-KYVideoTrim_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-KYVideoTrim_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		D2C2BD10575511D187EA52DF5835A705 /* KYVideoTrim-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KYVideoTrim-umbrella.h"; sourceTree = "<group>"; };
-		D519F3CE22E8F5E780DF57B9DE650A02 /* KYVideoTrim.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = KYVideoTrim.modulemap; sourceTree = "<group>"; };
+		D519F3CE22E8F5E780DF57B9DE650A02 /* KYVideoTrim.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = KYVideoTrim.modulemap; sourceTree = "<group>"; };
 		E07F3715533BB10E27834F8AB274309C /* Pods-KYVideoTrim_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-KYVideoTrim_Example-dummy.m"; sourceTree = "<group>"; };
 		E2CC4212187E9983272958745E733E9C /* Pods-KYVideoTrim_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-KYVideoTrim_Example.release.xcconfig"; sourceTree = "<group>"; };
 		E93C699A81AD4BF54C10EA119853CE92 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -312,6 +312,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
@@ -397,7 +398,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -561,7 +562,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -600,7 +601,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -671,7 +672,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";

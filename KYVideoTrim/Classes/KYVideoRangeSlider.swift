@@ -555,7 +555,7 @@ open class KYVideoRangeSlider: UIView {
         self.trimExportSession = AVAssetExportSession(asset: self.videoAsset!, presetName: videoQuality!.description)
         let trimVideoURL = NSURL(fileURLWithPath: self.trimVideoPath) as URL
         self.trimExportSession.outputURL = trimVideoURL
-        self.trimExportSession.outputFileType = AVFileTypeMPEG4
+        self.trimExportSession.outputFileType = AVFileType.mp4
 
         let starCMTime = CMTimeMakeWithSeconds(self.lowerValue, self.videoAsset!.duration.timescale)
         let durationCMTime = CMTimeMakeWithSeconds(self.upperValue-self.lowerValue, self.videoAsset!.duration.timescale);
@@ -564,8 +564,9 @@ open class KYVideoRangeSlider: UIView {
         self.trimExportSession.timeRange = rangeCMTime
 
         self.trimExportSession.exportAsynchronously {
-            DispatchQueue.main.async { [weak self] time in
-                if let strongSelf = self {
+            DispatchQueue.main.async {
+                var test:KYVideoRangeSlider? = self
+                if let strongSelf = test {
                     let value = strongSelf.trimExportSession.status.rawValue
                     if let exportSessionStatus = KYAssetExportSessionStatus(rawValue: value){
                         complete(exportSessionStatus,strongSelf.trimVideoPath)

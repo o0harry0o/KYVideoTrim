@@ -28,14 +28,15 @@ public enum KYVideoTrimFillMode: Int {
     case resize
 
     public var description: String {
-        switch self {
-        case .resizeAspect:
-            return AVLayerVideoGravityResizeAspect
-        case .resizeAspectFill:
-            return AVLayerVideoGravityResizeAspectFill
-        case .resize: return AVLayerVideoGravityResize
-
-        }
+//        switch self {
+//        case .resizeAspect:
+//            return AVLayerVideoGravity.resizeAspect
+//        case .resizeAspectFill:
+//            return AVLayerVideoGravity.resizeAspectFill
+//        case .resize: return AVLayerVideoGravity.resize
+//
+//        }
+        return ""
     }
 }
 
@@ -315,7 +316,7 @@ open class KYVideoPlayerView: UIView {
 
     public var videoFillMode: KYVideoTrimFillMode = .resizeAspect {
         didSet {
-            self.playerLayer.videoGravity = videoFillMode.description
+            self.playerLayer.videoGravity = AVLayerVideoGravity(rawValue: videoFillMode.description)
         }
     }
 
